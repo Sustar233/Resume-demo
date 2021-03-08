@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #efefef;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+
+ul, ol, dl {
+    list-style: none;
+}
