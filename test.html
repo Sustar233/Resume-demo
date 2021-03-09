@@ -167,5 +167,41 @@
       </ol>
     </section>
 
+    <section class="portfolio">
+      <h2>作品集</h2>
+      <nav>
+        <ol>
+          <li id="portfolio1">所有</li>
+          <li id="portfolio2">框架</li>
+          <li id="portfolio3">原生JS&amp;CSS</li>
+        </ol>
+
+        <div id="portfolioBar" class="bar state-1">
+          <div class="bar-inner "></div>
+        </div>
+      </nav>
+      <script>
+        portfolio1.onclick = function() {
+          portfolioBar.className = 'bar state-1'
+        }
+
+        portfolio2.onclick = function() {
+          portfolioBar.className = 'bar state-2'
+        }
+        
+        portfolio3.onclick = function() {
+          portfolioBar.className = 'bar state-3'
+        }
+      </script>
+
+      <div class="works" style="height: 598px">
+        <div class="big" style="top: 0; left: 0;"></div>
+        <div class="small" style="top: 0; left: 634px;"></div>
+        <div class="small" style="top: 312px; left: 634px;"></div>
+      </div>
+
+    </section>
+
+
   </body>
 </html>

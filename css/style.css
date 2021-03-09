@@ -80,7 +80,7 @@
 /* userCard */
 .userCard {
     position: relative;
-    max-width: 860px;
+    max-width: 930px;
     margin: -390px auto;
     background-color: #ffffff;
     border: 1px solid rgb(192, 56, 56);
@@ -201,7 +201,7 @@ main a.button:hover {
 }
 
 main .myIntro {
-    max-width: 860px;
+    max-width: 930px;
     margin: auto;
     line-height: 1.8;
     font-size: 18px;
@@ -209,14 +209,16 @@ main .myIntro {
     font-family: "楷体";
 }
 
-/* section skill */
-section.skills {
-    max-width: 860px;
-    margin: 600px auto;
+/* section skill & portfolio */
+section.skills,
+section.portfolio {
+    max-width: 930px;
+    margin: 0 auto;
     margin-top: 60px;
 }
 
-section.skills h2 {
+.skills h2,
+.portfolio h2 {
     text-align: center;
     counter-reset: black;
     font-size: 34px;
@@ -224,7 +226,7 @@ section.skills h2 {
     font-weight: 600;
 }
 
-section.skills ol {
+.skills ol {
     overflow: hidden;
     margin-top: 30px;
     padding: 42px 50px 10px;
@@ -232,18 +234,18 @@ section.skills ol {
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.4);
 }
 
-section.skills li span {
+.skills li span {
     font-size: 14px;
     line-height: 1.1;
     padding-right: 40px;
 }
 
-section.skills ol li {
+.skills ol li {
     float: left;
     width: 48%;
     box-sizing: border-box;
 }
-section.skills ol li:nth-child(2n) {
+.skills ol li:nth-child(2n) {
     float: right;
 }
 
@@ -257,6 +259,84 @@ section.skills ol li:nth-child(2n) {
 .skills .progressBar > .progress {
     height: 100%;
     background-color: #e6686A;
-    width: 70%;
+    width: 50%;
     border-radius: 2px;
+}
+
+.portfolio {
+    text-align: center;
+}
+
+.portfolio nav {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+
+.portfolio nav ol {
+    margin: 0 auto;
+    overflow: hidden;
+    display: inline-block;
+    /* 去除添加inline-block后的空隙 */
+    vertical-align: top;
+}
+
+.portfolio nav ol li {
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.portfolio nav ol li:nth-child(1) {
+    margin-left: 0;
+}
+
+.portfolio nav .bar {
+    margin: 10px 0;
+    height: 5px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.portfolio nav .bar-inner {
+    height: 100%;
+    width: 10%;
+    border-radius: 3px;
+    background-color: #E6686A;
+    transition: all 0.3s;
+}
+
+.portfolio .bar.state-1 .bar-inner {
+    margin-left: 0;
+    width: 50px;
+}
+
+.portfolio .bar.state-2 .bar-inner {
+    margin-left: 65px;
+    width: 50px;
+}
+
+.portfolio .bar.state-3 .bar-inner {
+    margin-left: 129px;
+    width: 95px;
+}
+
+.portfolio .works {
+    position: relative;
+}
+
+.portfolio .works > .big,
+.portfolio .works > .small {
+    position: absolute;
+    border: 1px solid;
+}
+
+.portfolio .works > .big {
+    width: 606px;
+    height: 597px;
+}
+
+.portfolio .works > .small {
+    width: 293px;
+    height: 285px;
 }
