@@ -16,7 +16,7 @@
           border: 1px solid;
           border-radius: 50%;
           background-color: black;
-          animation: s 0.5s linear infinite;
+          animation: s 1.5s linear infinite;
       }
       .loading::after {
           animation-delay: 0.75s;
@@ -248,10 +248,10 @@
 
     </section>
     <script>
-      window.addEventListener("load", function() {
-        let siteWel = document.querySelector(".site-welcome");
-        siteWel.className = "site-welcome";
-      })
+      setTimeout(()=>{
+          let siteWel = document.querySelector(".site-welcome");
+          siteWel.className = "site-welcome";
+      }, 1500)
     </script>
 
   </body>
