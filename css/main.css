@@ -13,16 +13,34 @@
     width: 50px;
  }
 
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear:both;
+    visibility: hidden;
+}
+
  /* topNavBar */
 .topNavBar {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     width: 100%;
     padding: 20px 0;
-    overflow: hidden;
+    transition: all 0.5s;
+    color: #B7B7B7;
 }
 .topNavBar-inner {
     padding: 0 10px;
+}
+
+/* topNavBar.sticky */
+.topNavBar.sticky {
+    position: fixed;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    color: #3d4451;
 }
 
 .logo {
@@ -44,36 +62,82 @@
     padding-top: 6px;
     padding-bottom: 2px;
 }
-.topNavBar ul {
+.topNavBar nav>ul {
     float: right;
-    overflow: hidden;
     list-style: none;
 }
 
-.topNavBar ul li {
+.topNavBar nav>ul>li {
     float: left;
+    position: relative;
     margin: 0 17px;
 }
 
 .topNavBar ul a {
     display: block;
+    position: relative;
     font-size: 12px;
-    color: #B7B7B7;
     font-weight: bold;
-    border: 3px solid transparent;
+    color: inherit;
+    padding: 5px 0;
+    border-bottom: 3px solid transparent;
 }
 
-.topNavBar ul a:hover {
+.topNavBar ul li.active a::after {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    top: 100%;
+    left: 0;
+    width: 100%;
     border-bottom: 3px solid #da6163;
+    border-radius: 2px;
+    animation: topLiBor 0.3s linear;
+}
+@keyframes topLiBor{
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.topNavBar .submenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    color: #3d4451;
+}
+.topNavBar li.active .submenu {
+    display: block;
+    animation: submenu 0.3s;
+    overflow: hidden;
+}
+@keyframes submenu {
+    0% {
+        margin-right: 100%;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+
+/* 禁用换行后可让submenu不尽量变窄而缩到和父元素同宽 */
+.topNavBar .submenu > li {
+    white-space: nowrap;
+    padding: 5px 10px;
 }
 
 .banner {
-    height: 515px;
+    height: 545px;
     background: url('../img/arkback.jpg') top center;
     background-size: cover;
 }
 .banner .mask {
-    height: 515px;
+    height: 545px;
     background-color: rgba(0,0,0,0.5);
 }
 
@@ -81,14 +145,13 @@
 .userCard {
     position: relative;
     max-width: 930px;
-    margin: -390px auto;
+    margin: -350px auto;
     background-color: #ffffff;
     border: 1px solid rgb(192, 56, 56);
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
 }
 
 .userCard .textAndPic {
-    overflow: hidden;
     padding: 50px;
 }
 
@@ -96,7 +159,6 @@
     float: left;
     height: 360px;
     width: 230px;
-    overflow: hidden;
     background-color: rgb(131, 131, 241);
 }
 .picture img {
@@ -175,7 +237,7 @@ footer ul li {
 /* main */
 main {
     margin: 0 auto;
-    margin-top: 390px;
+    margin-top: 350px;
     width: 100%;
 }
 
@@ -227,7 +289,6 @@ section.portfolio {
 }
 
 .skills ol {
-    overflow: hidden;
     margin-top: 30px;
     padding: 42px 50px 10px;
     background-color: white;
@@ -275,7 +336,6 @@ section.portfolio {
 
 .portfolio nav ol {
     margin: 0 auto;
-    overflow: hidden;
     display: inline-block;
     /* 去除添加inline-block后的空隙 */
     vertical-align: top;

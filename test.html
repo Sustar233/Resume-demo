@@ -56,23 +56,45 @@
     <div class="site-welcome active">
       <div class="loading"></div>
     </div>
-    <div class="topNavBar">
+    <div id="topNavBar" class="topNavBar clearfix">
       <div class="topNavBar-inner">
         <div class="logo">
           <span class="rs">RS</span>
           <span class="card">card</span>
         </div>
-        <nav>
+        <nav id="topNav" class="clearfix">
           <ul>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SKILLS</a></li>
-            <li><a href="#">EXPERIENCE</a></li>
-            <li><a href="#">PRICING</a></li>
-            <li><a href="#">BLOG</a></li>
-            <li><a href="#">CALENDAR</a></li>
-            <li><a href="#">CONTACT</a></li>
-            <li><a href="#">OTHER</a></li>
-            <li><a href="#">ALL DEMOS</a></li>
+            <li>
+              <a href="#siteAbout">关于</a>
+            </li>
+            <li>
+              <a href="#siteSkills">技能</a>
+            </li>
+            <li>
+              <a href="#siteWorks">作品</a>
+              <ul class="submenu">
+                <li>作品1</li>
+                <li>作品2</li>
+                <li>作品3</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">博客</a>
+              <ul class="submenu">
+                <li>博客1</li>
+                <li>博客2</li>
+                <li>博客3</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">日历</a>
+            </li>
+            <li>
+              <a href="#">联系方式</a>
+            </li>
+            <li>
+              <a href="#">其他</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -80,9 +102,9 @@
     <div class="banner">
       <div class="mask"></div>
     </div>
-    <div class="userCard">
-      <div class="textAndPic">
-        <div class="picture">
+    <div id="siteAbout" class="userCard">
+      <div class="textAndPic clearfix">
+        <div class="picture clearfix">
           <img src="img/img.jpeg" alt="头像">
         </div>
         <div class="text">
@@ -159,9 +181,9 @@
       </p>
     </main>
 
-    <section class="skills">
+    <section id="siteSkills" class="skills">
       <h2>技能</h2>
-      <ol>
+      <ol class="clearfix">
         <li>
           <span>
               HTML 5 &amp; CSS 3
@@ -213,10 +235,10 @@
       </ol>
     </section>
 
-    <section class="portfolio">
+    <section id="siteWorks" class="portfolio">
       <h2>作品集</h2>
       <nav>
-        <ol>
+        <ol class="clearfix">
           <li id="portfolio1">所有</li>
           <li id="portfolio2">框架</li>
           <li id="portfolio3">原生JS&amp;CSS</li>
@@ -247,11 +269,17 @@
       </div>
 
     </section>
+
+    <script src="js/main.js"></script>
     <script>
-      setTimeout(()=>{
+      // setTimeout(()=>{
+      //     let siteWel = document.querySelector(".site-welcome");
+      //     siteWel.className = "site-welcome";
+      // }, 1000)
+      window.addEventListener("load", function() {
           let siteWel = document.querySelector(".site-welcome");
           siteWel.className = "site-welcome";
-      }, 1500)
+      })
     </script>
 
   </body>
