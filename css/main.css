@@ -21,6 +21,18 @@
     visibility: hidden;
 }
 
+[data-top].animate {
+    animation: slideUp 0.5s;
+}
+[data-top].offset {
+    transform: translateY(100px);
+}
+[data-top] {
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+
  /* topNavBar */
 .topNavBar {
     position: absolute;
@@ -315,13 +327,18 @@ section.portfolio {
     height: 4px;
     background-color: #FAE1E1;
     border-radius: 2px;
+    overflow: hidden;
 }
-
 .skills .progressBar > .progress {
     height: 100%;
     background-color: #e6686A;
     width: 50%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+.skills.offset .progressBar > .progress {
+    transform: translateX(-100%);
 }
 
 .portfolio {
