@@ -111,7 +111,7 @@
     background-color: white;
     color: #3d4451;
 }
-.topNavBar li.active .submenu {
+.topNavBar li.showSubmenu .submenu {
     display: block;
     animation: submenu 0.3s;
     overflow: hidden;
