@@ -332,7 +332,7 @@ section.portfolio {
 .skills .progressBar > .progress {
     height: 100%;
     background-color: #e6686A;
-    width: 50%;
+    width: 60%;
     border-radius: 2px;
     transform: translateX(0);
     transition: all 1s;
@@ -343,9 +343,9 @@ section.portfolio {
 
 .portfolio {
     text-align: center;
-}
-
-.portfolio nav {
+  }
+  
+  .portfolio nav {
     display: inline-block;
     vertical-align: top;
     margin-top: 32px;
@@ -400,6 +400,7 @@ section.portfolio {
 
 .portfolio .works {
     position: relative;
+    margin-bottom: 20px;
 }
 
 .portfolio .works > .big,
